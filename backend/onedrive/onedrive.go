@@ -82,15 +82,15 @@ var (
 	graphAPIEndpoint = map[string]string{
 		"global": "https://graph.microsoft.com",
 		"us":     "https://graph.microsoft.us",
-		"de":     "https://graph.microsoft.de",
-		"cn":     "https://microsoftgraph.chinacloudapi.cn",
+		//"de":     "https://graph.microsoft.de",
+		//"cn":     "https://microsoftgraph.chinacloudapi.cn",
 	}
 
 	authEndpoint = map[string]string{
 		"global": "https://login.microsoftonline.com",
 		"us":     "https://login.microsoftonline.us",
-		"de":     "https://login.microsoftonline.de",
-		"cn":     "https://login.chinacloudapi.cn",
+		//"de":     "https://login.microsoftonline.de",
+		//"cn":     "https://login.chinacloudapi.cn",
 	}
 
 	// QuickXorHashType is the hash.Type for OneDrive
