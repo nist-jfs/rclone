@@ -148,7 +148,8 @@ Note that the chunks will be buffered into memory.`,
 			Sensitive: true,
 		}, {
 			Name:     "drive_type",
-			Help:     "The type of the drive (" + driveTypePersonal + " | " + driveTypeBusiness + " | " + driveTypeSharepoint + ").",
+			//Help:     "The type of the drive (" + driveTypePersonal + " | " + driveTypeBusiness + " | " + driveTypeSharepoint + ").",
+			Help:     "The type of the drive (" + driveTypeBusiness + ").",
 			Default:  "",
 			Advanced: true,
 		}, {
