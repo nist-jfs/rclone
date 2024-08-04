@@ -563,24 +563,24 @@ func Config(ctx context.Context, name string, m configmap.Mapper, config fs.Conf
 		return fs.ConfigChooseExclusiveFixed("choose_type_done", "config_type", "Type of connection", []fs.OptionExample{{
 			Value: "onedrive",
 			Help:  "OneDrive Personal or Business",
-		}, {
-			Value: "sharepoint",
-			Help:  "Root Sharepoint site",
-		}, {
-			Value: "url",
-			Help:  "Sharepoint site name or URL\nE.g. mysite or https://contoso.sharepoint.com/sites/mysite",
-		}, {
-			Value: "search",
-			Help:  "Search for a Sharepoint site",
-		}, {
-			Value: "driveid",
-			Help:  "Type in driveID (advanced)",
-		}, {
-			Value: "siteid",
-			Help:  "Type in SiteID (advanced)",
-		}, {
-			Value: "path",
-			Help:  "Sharepoint server-relative path (advanced)\nE.g. /teams/hr",
+		//}, {
+		//	Value: "sharepoint",
+		//	Help:  "Root Sharepoint site",
+		//}, {
+		//	Value: "url",
+		//	Help:  "Sharepoint site name or URL\nE.g. mysite or https://contoso.sharepoint.com/sites/mysite",
+		//}, {
+		//	Value: "search",
+		//	Help:  "Search for a Sharepoint site",
+		//}, {
+		//	Value: "driveid",
+		//	Help:  "Type in driveID (advanced)",
+		//}, {
+		//	Value: "siteid",
+		//	Help:  "Type in SiteID (advanced)",
+		//}, {
+		//	Value: "path",
+		//	Help:  "Sharepoint server-relative path (advanced)\nE.g. /teams/hr",
 		}})
 	case "choose_type_done":
 		// Jump to next state according to config chosen
