@@ -51,7 +51,7 @@ const (
 	decayConstant               = 2 // bigger for slower decay, exponential
 	configDriveID               = "drive_id"
 	configDriveType             = "drive_type"
-	driveTypePersonal           = "business"
+	driveTypePersonal           = "unauthorized"
 	driveTypeBusiness           = "business"
 	driveTypeSharepoint         = "documentLibrary"
 	defaultChunkSize            = 10 * fs.Mebi
