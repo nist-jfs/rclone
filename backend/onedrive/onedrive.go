@@ -123,12 +123,12 @@ func init() {
 				}, {
 					Value: regionUS,
 					Help:  "Microsoft Cloud for US Government",
-				}, {
-					Value: regionDE,
-					Help:  "Microsoft Cloud Germany",
-				}, {
-					Value: regionCN,
-					Help:  "Azure and Office 365 operated by Vnet Group in China",
+				//}, {
+				//	Value: regionDE,
+				//	Help:  "Microsoft Cloud Germany",
+				//}, {
+				//	Value: regionCN,
+				//	Help:  "Azure and Office 365 operated by Vnet Group in China",
 				},
 			},
 		}, {
