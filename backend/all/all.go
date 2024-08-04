@@ -34,7 +34,7 @@ import (
 	//_ "github.com/rclone/rclone/backend/mega"
 	//_ "github.com/rclone/rclone/backend/memory"
 	//_ "github.com/rclone/rclone/backend/netstorage"
-	_ "github.com/nist-jfs/rclone/backend/onedrive"
+	_ "github.com/rclone/rclone/backend/onedrive"
 	//_ "github.com/rclone/rclone/backend/opendrive"
 	//_ "github.com/rclone/rclone/backend/oracleobjectstorage"
 	//_ "github.com/rclone/rclone/backend/pcloud"
