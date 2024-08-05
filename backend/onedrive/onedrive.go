@@ -559,6 +559,11 @@ func Config(ctx context.Context, name string, m configmap.Mapper, config fs.Conf
 	}
 	srv := rest.NewClient(oAuthClient)
 
+	if rootItem.ParentReference.DriveType == driveTypePersonal {
+		fmt.Sprintf("OneDrive Personal accounts are not authorized.")
+		return
+	}
+	
 	switch config.State {
 	case "choose_type":
 		return fs.ConfigChooseExclusiveFixed("choose_type_done", "config_type", "Type of connection", []fs.OptionExample{{
@@ -684,11 +689,6 @@ Examples:
 
 		m.Set(configDriveID, finalDriveID)
 		m.Set(configDriveType, rootItem.ParentReference.DriveType)
-
-		if rootItem.ParentReference.DriveType == driveTypePersonal {
-			fmt.Sprintf("OneDrive Personal accounts are not authorized.")
-			return fs.ConfigGoto("choose_type")
-		}
 
 		return fs.ConfigConfirm("driveid_final_end", true, "config_drive_ok", fmt.Sprintf("Drive OK?\n\nFound drive %q of type %q\nURL: %s\n", rootItem.Name, rootItem.ParentReference.DriveType, rootItem.WebURL))
 	case "driveid_final_end":
