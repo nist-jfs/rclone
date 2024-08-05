@@ -560,8 +560,7 @@ func Config(ctx context.Context, name string, m configmap.Mapper, config fs.Conf
 	srv := rest.NewClient(oAuthClient)
 
 	if rootItem.ParentReference.DriveType == driveTypePersonal {
-		fmt.Sprintf("OneDrive Personal accounts are not authorized.")
-		return
+		return nil, fmt.Errorf("OneDrive Personal accounts are not authorized")
 	}
 	
 	switch config.State {
