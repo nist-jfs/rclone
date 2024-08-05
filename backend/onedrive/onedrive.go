@@ -559,9 +559,9 @@ func Config(ctx context.Context, name string, m configmap.Mapper, config fs.Conf
 	}
 	srv := rest.NewClient(oAuthClient)
 
-	if rootItem.ParentReference.DriveType == driveTypePersonal {
-		return nil, fmt.Errorf("OneDrive Personal accounts are not authorized")
-	}
+	//if rootItem.ParentReference.DriveType == driveTypePersonal {
+	//	return nil, fmt.Errorf("OneDrive Personal accounts are not authorized")
+	//}
 	
 	switch config.State {
 	case "choose_type":
@@ -685,7 +685,11 @@ Examples:
 		if err != nil {
 			return fs.ConfigError("choose_type", fmt.Sprintf("Failed to query root for drive %q: %v", finalDriveID, err))
 		}
-
+		
+		if rootItem.ParentReference.DriveType == driveTypePersonal {
+			return nil, fmt.Errorf("OneDrive Personal accounts are not authorized")
+		}
+	
 		m.Set(configDriveID, finalDriveID)
 		m.Set(configDriveType, rootItem.ParentReference.DriveType)
 
