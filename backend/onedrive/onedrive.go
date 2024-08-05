@@ -51,7 +51,7 @@ const (
 	decayConstant               = 2 // bigger for slower decay, exponential
 	configDriveID               = "drive_id"
 	configDriveType             = "drive_type"
-	driveTypePersonal           = "unauthorized"
+	driveTypePersonal           = "personal"
 	driveTypeBusiness           = "business"
 	driveTypeSharepoint         = "documentLibrary"
 	defaultChunkSize            = 10 * fs.Mebi
@@ -684,6 +684,10 @@ Examples:
 
 		m.Set(configDriveID, finalDriveID)
 		m.Set(configDriveType, rootItem.ParentReference.DriveType)
+
+		if rootItem.ParentReference.DriveType == driveTypePersonal {
+			return fs.ConfigError("choose_type", fmt.Sprintf("Personal OneDrive accounts are not allowed", finalDriveID, err))
+		}
 
 		return fs.ConfigConfirm("driveid_final_end", true, "config_drive_ok", fmt.Sprintf("Drive OK?\n\nFound drive %q of type %q\nURL: %s\n", rootItem.Name, rootItem.ParentReference.DriveType, rootItem.WebURL))
 	case "driveid_final_end":
