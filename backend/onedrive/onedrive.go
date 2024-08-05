@@ -686,7 +686,8 @@ Examples:
 		m.Set(configDriveType, rootItem.ParentReference.DriveType)
 
 		if rootItem.ParentReference.DriveType == driveTypePersonal {
-			return fs.ConfigError("choose_type", fmt.Sprintf("Personal OneDrive accounts are not allowed", finalDriveID, err))
+			fmt.Sprintf("OneDrive Personal accounts are not authorized.")
+			return fs.ConfigGoto("choose_type")
 		}
 
 		return fs.ConfigConfirm("driveid_final_end", true, "config_drive_ok", fmt.Sprintf("Drive OK?\n\nFound drive %q of type %q\nURL: %s\n", rootItem.Name, rootItem.ParentReference.DriveType, rootItem.WebURL))
